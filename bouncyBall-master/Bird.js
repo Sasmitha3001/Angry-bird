@@ -1,19 +1,18 @@
-class Bird{
-    constructor(x,y,radius){
-        var bird_option={
-            restitution:0.8  
-        }
-        this.body=Bodies.circle(x,y,radius,bird_option);
-        this.radius=radius;
-        World.add(world,this.body);
+class Bird extends Base{
+    constructor(x,y){
+        super(x,y,50,50);
 
+        this.image=loadImage("Sprites/bird.png");
+        
+      
     }
+
     display(){
-        // this.body.position.x=mouse.x;
-        // this.body.position.y=mouse.y;
+        // this.body.position.x=mouseX;
+        // this.body.position.y=mouseY;
 
-        ellipseMode(RADIUS);
-        fill("yellow");
-        ellipse(this.body.position.x,this.body.position.y,this.radius);
+        super.display();
+      
     }
+    
 }

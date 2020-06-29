@@ -1,17 +1,9 @@
-class Log{
-    constructor(x,y,width,height){
-        var log_options={
-            restitution:0.5
-        }
-        this.body=Bodies.rectangle(x,y,width,height,log_options);
-        this.width=width;
-        this.height=height;
-        World.add(world,this.body);
+class Log extends Base{
+    constructor(x,y,height,angle){
+        super(x,y,20,height,angle);
+        this.image=loadImage("Sprites/wood2.png");
+        Matter.Body.setAngle(this.body,angle);
+        
     }
-    display(){
-        var place=this.body.postion;
-        rectMode(CENTER);
-        fill("brown");
-        rect(this.body.position.x,this.body.position.y, this.width,this.height);
-    }
+    
 }

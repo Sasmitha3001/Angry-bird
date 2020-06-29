@@ -1,23 +1,9 @@
-class Pig{
-    constructor(x,y,radius){
-       var  pig_option={
-            restitution:0.5,
-            friction:1.0
-        }
-
-        this.body=Bodies.circle(x,y,radius,pig_option);
-        this.radius=radius;
-        World.add(world,this.body);
-
+class Pig extends Base{
+    constructor(x,y){
+        super(x,y,50,50);
+        this.image=loadImage("Sprites/enemy.png")
+      
     }
 
-    display(){
-        
-
-        var place=this.body.position;
-
-        ellipseMode(RADIUS);
-        fill("green");
-        ellipse(place.x,place.y,this.radius);
-    }
+    
 }
